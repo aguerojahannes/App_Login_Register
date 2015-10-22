@@ -1,0 +1,21 @@
+<div ng-controller="PostController as vm" id="allPosts">
+<h2 style="text-align:center">All Posts</h2>
+
+<md-whiteframe class="md-whiteframe-2dp" flex layout="row"  layout-align="center center" ng-repeat="items in vm.post">
+    <div flex="40"><img ng-src="{{items.image}}" alt="{{items.postedBy}}" width="200px"/></div>
+    <div flex>
+      <h3><a ui-sref="FullPost({id: items._id})">{{items.type | uppercase}} {{items.headline}}</a></h3>
+    <span>Posted by {{items.postedBy}} on {{items.postedOn | date: shortDate}}</span>
+    <div layout="row">
+      <!-- <div>
+      <md-button ui-sref="EditPost({id: items._id})" type="btn btn-xs">Edit</md-button>
+      </div> -->
+      <!-- <md-button ui-sref="EditPost({id: items._id})" type="btn btn-xs">Complete</md-button> -->
+      <div>
+         <md-button ng-click="vm.deletePost(items)" type="btn btn-xs">Delete</md-button>
+      </div>
+    </div>
+   </div>
+  </md-whiteframe>
+
+</div>

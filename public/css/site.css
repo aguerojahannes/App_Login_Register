@@ -1,0 +1,53 @@
+html {
+   background-color: #98504b;
+}
+
+body {
+   background-color: #98504b;
+}
+
+.logo {
+   width: 200px;
+}
+
+a {
+   color: #533730;
+}
+
+.main {
+   background-color: #b9dae3;
+}
+
+.whiteframedemoBasicUsage md-whiteframe {
+  background: #fff;
+  margin: 30px;
+  height: 100px; }
+
+  .inputdemoErrors .inputErrorsApp {
+  min-height: 48px; }
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+   background-color: #533730;
+
+}
+
+.md-primary {
+   background-color: black;
+}
+
+a.md-button.md-default-theme.md-fab, a.md-button.md-fab, .md-button.md-default-theme.md-fab, .md-button.md-fab {
+   background-color: #533730;
+   width: 200px;
+}
+
+a.md-button.md-default-theme.md-fab:not([disabled]):hover, a.md-button.md-fab:not([disabled]):hover, .md-button.md-default-theme.md-fab:not([disabled]):hover, .md-button.md-fab:not([disabled]):hover {
+   background-color: #8a4433;
+}
+
+.nav {
+   background-color: ;
+}
+
+.loginregister {
+   text-align: right;
+}

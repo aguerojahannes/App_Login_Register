@@ -1,0 +1,61 @@
+<div layout="column" layout-align="center center" layout-padding layout-wrap layout-fill flex="100" ng-cloak>
+
+<!-- LOGIN -->
+   <md-whiteframe ng-show="nav.isLogin" class="md-whiteframe-1dp" flex="100" layout="column" layout layout-align="center center">
+      <md-toolbar class="md-primary">
+         <h1 class="md-toolbar-tools">
+            Welcome back!
+         </h1>
+      </md-toolbar>
+      <md-content layout-padding>
+         <form name="loginForm" ng-submit="nav.loginUser()">
+            <md-input-container>
+               <label>User Name</label>
+               <input required name="username" ng-model="nav.user.username">
+            </md-input-container>
+            <md-input-container>
+               <label>Password</label>
+               <input required type="password" name="userPassword" ng-model="nav.user.password" minlength="5" />
+            </md-input-container>
+            <div layout="right">
+               <md-button type="submit" ng-disabled="!nav.user.username || !nav.user.password">Login</md-button>
+               <md-button type="button" ng-click="nav.isLogin = false">Register</md-button>
+            </div>
+         </form>
+      </md-content>
+   </md-whiteframe>
+
+   <!-- REGISTER -->
+   <md-whiteframe ng-show="!nav.isLogin" class="md-whiteframe-1dp" flex="25" layout="column" layout layout-align="center center">
+      <md-toolbar class="md-primary">
+         <h1 class="md-toolbar-tools">
+            Please sign up.
+         </h1>
+      </md-toolbar>
+      <md-content layout-padding>
+         <form name="loginForm" ng-submit="nav.registerUser()">
+            <md-input-container>
+               <label>User Name</label>
+               <input required name="username" ng-model="nav.user.username">
+            </md-input-container>
+            <md-input-container>
+               <label>Email Address</label>
+               <input required type="email" name="username" ng-model="nav.user.email">
+            </md-input-container>
+            <md-input-container>
+               <label>Password</label>
+               <input required type="password" name="userPassword" ng-model="nav.user.password" minlength="5" />
+            </md-input-container>
+            <md-input-container>
+               <label>Confirm Password</label>
+               <input required type="password" name="userPassword" ng-model="nav.user.confirmPassword" minlength="5" />
+            </md-input-container>
+            <div layout="right">
+               <md-button type="submit" ng-disabled="!nav.user.username || !nav.user.email || !nav.user.password || !(nav.user.password === nav.user.confirmPassword)">Register</md-button>
+               <md-button type="button" ng-click="nav.isLogin = true">Login</md-button>
+
+            </div>
+         </form>
+      </md-content>
+   </md-whiteframe>
+</div>

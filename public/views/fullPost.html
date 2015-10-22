@@ -1,0 +1,36 @@
+<div ng-controller="FullPostController as vm">
+   <md-whiteframe class="md-whiteframe-2dp" flex layout="row"  layout-align="center center">
+       <div flex="40"><img ng-src="{{vm.fullPost.image}}" ng-alt="{{vm.fullPost.postedBy}}" width="200px"/></div>
+       <div flex>
+         <h3>{{vm.fullPost.type | uppercase}} {{vm.fullPost.headline}}</h3>
+       <span>Posted by {{vm.fullPost.postedBy}} on {{vm.fullPost.postedOn | date: shortDate}}</span>
+       <p>{{vm.fullPost.body}}</p>
+      </div>
+     </md-whiteframe>
+     <!-- Shows inputs for a user to add a response -->
+     <div ng-show="addingResponse" style="padding-top:50px">
+        <md-input-container>
+           <label>Post</label>
+         <textarea required ng-model="vm.response.body" columns="4" md-maxlength="300"></textarea>
+       </md-input-container>
+       <md-input-container>
+           <md-select-label>Rating</md-select-label>
+           <md-select ng-model="vm.response.rating">
+             <md-option ng-repeat="num in vm.rating">
+              {{num}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-button type="button" ng-click="addingResponse = false; vm.addResponse()">Submit</md-button>
+        <md-button type="button" ng-click="addingResponse = false;">Cancel</md-button>
+     </div>
+          <!-- Shows a button for a user to click on and show the inputs -->
+     <div ng-show="!addingResponse && nav.status.username"> <!--  didn't work well:  ng-if="nav.status.username" -->
+        <md-button type="button" ng-click="addingResponse = true;">Add Response</md-button>
+     </div>
+     <div>
+        <ul>
+           <li ng-repeat="r in vm.post.response">{{r.body}} | {{r.postedBy}}</li>
+        </ul>
+
+</div>
