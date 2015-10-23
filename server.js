@@ -1,4 +1,4 @@
-if(process.env.NODE_ENV !=== "production"){
+if(process.env.NODE_ENV !== "production"){
 		require("dotenv").load(); // run this package we just downloaded.
 }
 
@@ -15,8 +15,7 @@ require("./models/Response");
 require("./config/passport"); // right above the connect, below the User models
 
 // mongoose.connect("mongodb://localhost/App");
-// mongodb://aguerojahannes:123123@ds043714.mongolab.com:43714/jobmatch
-mongoose.connect("process.env.MONGO_STRING");
+mongoose.connect(process.env.MONGO_STRING);
 
 
 
